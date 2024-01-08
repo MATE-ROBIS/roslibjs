@@ -1,13 +1,13 @@
-var Ros = require('../core/Ros');
-var net = require('net');
-var socketAdapter = require('../core/SocketAdapter.js');
-const TopicStream = require('./TopicStream');
+import Ros from '../core/Ros';
+import net from 'net';
+import socketAdapter from '../core/SocketAdapter.js';
+import TopicStream from './TopicStream';
 
 /**
  * Same as core Ros except supports TCP connections.
  * @private
  */
-class RosTCP extends Ros {
+export default class RosTCP extends Ros {
   constructor(options) {
     options = options || {};
     if (!options.encoding) {
@@ -59,5 +59,3 @@ class RosTCP extends Ros {
     return new TopicStream({ ros: this, ...options });
   }
 }
-
-module.exports = RosTCP;

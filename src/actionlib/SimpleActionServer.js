@@ -3,10 +3,10 @@
  * @author Laura Lindzey - lindzey@gmail.com
  */
 
-var Topic = require('../core/Topic');
-var Message = require('../core/Message');
-var EventEmitter2 = require('eventemitter2').EventEmitter2;
-var Ros = require('../core/Ros');
+import Topic from '../core/Topic';
+import Message from '../core/Message';
+import Ros from '../core/Ros';
+import { EventEmitter2 } from 'eventemitter2';
 
 /**
  * An actionlib action server client.
@@ -15,7 +15,7 @@ var Ros = require('../core/Ros');
  *  * 'goal' - Goal sent by action client.
  *  * 'cancel' - Action client has canceled the request.
  */
-class SimpleActionServer extends EventEmitter2 {
+export default class SimpleActionServer extends EventEmitter2 {
   /**
    * @param {Object} options
    * @param {Ros} options.ros - The ROSLIB.Ros connection handle.
@@ -240,5 +240,3 @@ class SimpleActionServer extends EventEmitter2 {
     }
   }
 }
-
-module.exports = SimpleActionServer;

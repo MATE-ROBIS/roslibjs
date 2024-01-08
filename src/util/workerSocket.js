@@ -1,14 +1,7 @@
-try {
-  // @ts-expect-error -- webworker include workarounds I don't know enough about to fix right now
-  var work = require('webworkify');
-} catch (ReferenceError) {
-  // @ts-expect-error -- webworker include workarounds I don't know enough about to fix right now
-  // webworkify raises ReferenceError when required inside webpack
-  var work = require('webworkify-webpack');
-}
-var workerSocketImpl = require('./workerSocketImpl');
+import work from 'webworkify';
+import workerSocketImpl from './workerSocketImpl';
 
-class WorkerSocket {
+export default class WorkerSocket {
   constructor(uri) {
     this.onclose = undefined;
     this.onerror = undefined;
@@ -53,5 +46,3 @@ class WorkerSocket {
     });
   }
 }
-
-module.exports = WorkerSocket;

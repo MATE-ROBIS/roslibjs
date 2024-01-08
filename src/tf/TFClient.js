@@ -3,22 +3,22 @@
  * @author David Gossow - dgossow@willowgarage.com
  */
 
-const { EventEmitter2 } = require('eventemitter2');
-var ActionClient = require('../actionlib/ActionClient');
-var Goal = require('../actionlib/Goal');
+import ActionClient from '../actionlib/ActionClient';
+import Goal from '../actionlib/Goal';
 
-var Service = require('../core/Service.js');
-var ServiceRequest = require('../core/ServiceRequest.js');
-var Topic = require('../core/Topic.js');
+import Service from '../core/Service.js';
+import ServiceRequest from '../core/ServiceRequest.js';
+import Topic from '../core/Topic.js';
 
-var Transform = require('../math/Transform');
+import Transform from '../math/Transform';
 
-var Ros = require('../core/Ros');
+import Ros from '../core/Ros';
+import { EventEmitter2 } from 'eventemitter2';
 
 /**
  * A TF Client that listens to TFs from tf2_web_republisher.
  */
-class TFClient extends EventEmitter2 {
+export default class TFClient extends EventEmitter2 {
   /**
    * @param {Object} options
    * @param {Ros} options.ros - The ROSLIB.Ros connection handle.
@@ -229,5 +229,3 @@ class TFClient extends EventEmitter2 {
     }
   }
 }
-
-module.exports = TFClient;

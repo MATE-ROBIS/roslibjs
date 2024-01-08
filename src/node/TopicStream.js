@@ -1,7 +1,7 @@
-var Topic = require('../core/Topic');
-var DuplexStream = require('stream').Duplex;
+import Topic from '../core/Topic';
+import { Duplex as DuplexStream } from "stream";
 
-class TopicStream extends Topic {
+export default class TopicStream extends Topic {
   /**
    * Publish a connected ROS topic to a duplex
    * stream. This stream can be piped to, which will
@@ -47,5 +47,3 @@ class TopicStream extends Topic {
     return stream;
   }
 }
-
-module.exports = TopicStream;

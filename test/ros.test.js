@@ -1,6 +1,6 @@
-var expect = require('chai').expect;
+import { expect } from chai;
 var EventEmitter2 = require('eventemitter2').EventEmitter2;
-var ROSLIB = require('..');
+import ROSLIB from '..';
 
 describe('ROS', function() {
 

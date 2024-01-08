@@ -1,6 +1,4 @@
-var WebSocket = WebSocket || require('ws');
-
-module.exports = function (self) {
+export default function (self) {
   var socket = null;
 
   function handleSocketMessage(ev) {
@@ -45,4 +43,4 @@ module.exports = function (self) {
       }
     }
   });
-};
+}

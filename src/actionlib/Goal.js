@@ -3,9 +3,9 @@
  * @author Russell Toris - rctoris@wpi.edu
  */
 
-var Message = require('../core/Message');
-var EventEmitter2 = require('eventemitter2').EventEmitter2;
-var ActionClient = require('./ActionClient');
+import { EventEmitter2 } from 'eventemitter2';
+import Message from '../core/Message';
+import ActionClient from './ActionClient';
 
 /**
  * An actionlib goal that is associated with an action server.
@@ -13,7 +13,7 @@ var ActionClient = require('./ActionClient');
  * Emits the following events:
  *  * 'timeout' - If a timeout occurred while sending a goal.
  */
-class Goal extends EventEmitter2 {
+export default class Goal extends EventEmitter2 {
   /**
    * @param {Object} options
    * @param {ActionClient} options.actionClient - The ROSLIB.ActionClient to use with this goal.
@@ -88,5 +88,3 @@ class Goal extends EventEmitter2 {
     this.actionClient.cancelTopic.publish(cancelMessage);
   }
 }
-
-module.exports = Goal;
